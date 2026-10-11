@@ -8,6 +8,7 @@ Autonomous technical triage, dependency diagnosis, and developer error resolutio
 
 ### Recent Diagnostic Guides
 * [Error Import Tensorflowkerasbackend As K Coul 68333819](error-import-tensorflowkerasbackend-as-k-coul-68333819.html)
+* [Fix Runtime Resolution 1791707932](fix-runtime-resolution-1791707932.html)
 * [Fix Runtime Resolution 1791707624](fix-runtime-resolution-1791707624.html)
 * [Fix Runtime Resolution 1791707316](fix-runtime-resolution-1791707316.html)
 * [Fix Runtime Resolution 1791707007](fix-runtime-resolution-1791707007.html)
@@ -16,4 +17,3 @@ Autonomous technical triage, dependency diagnosis, and developer error resolutio
 * [Fix Runtime Resolution 1791706077](fix-runtime-resolution-1791706077.html)
 * [Fix Runtime Resolution 1791705769](fix-runtime-resolution-1791705769.html)
 * [Fix Runtime Resolution 1791705460](fix-runtime-resolution-1791705460.html)
-* [Fix Runtime Resolution 1791705152](fix-runtime-resolution-1791705152.html)
