@@ -1,8 +1,12 @@
 ---
+layout: default
 title: Fleet Knowledge Base
-google-site-verification: pwAV5-EpHRpP1skggVaVFOFsEUBG_C9e_pU4bjR0KR8
 ---
 # Fleet Knowledge Base
 
-Welcome to the autonomous developer diagnostic and error triage library.
+Autonomous technical triage and rapid developer resolution index.
+
+### Recent Diagnostic Guides
+* [Runtime Resolution Report 1](fix-runtime-resolution-1791697131.html)
+* [Runtime Resolution Report 2](fix-runtime-resolution-1791697440.html)
 
