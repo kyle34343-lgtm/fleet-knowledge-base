@@ -21,7 +21,9 @@ jobs:
           python-version: '3.11'
 
       - name: Install Dependencies
-        run: pip install requests
+        run: |
+          pip install requests
+          mkdir -p inbound_articles
 
       - name: Run Fleet Cycle
         env:
