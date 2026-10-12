@@ -5,8 +5,8 @@ import requests
 from datetime import datetime
 
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL", "")
-STRIPE_TIER_1_URL = "https://buy.stripe.com/test_19_tier"
-STRIPE_TIER_2_URL = "https://buy.stripe.com/test_49_tier"
+STRIPE_TIER_1_URL = "https://buy.stripe.com/00w4gy0ALeLB8Yy8hr6Zy02"
+STRIPE_TIER_2_URL = "https://buy.stripe.com/7sYfZggzJ46X6Qq0OZ6Zy01"
 
 def run_fleet_cycle(cycle_num):
     print(f"[*] FLEET CYCLE #{cycle_num} INITIATED - {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')}")
