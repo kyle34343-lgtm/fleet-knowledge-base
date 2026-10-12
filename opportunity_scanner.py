@@ -5,6 +5,7 @@ import subprocess
 import requests
 import re
 import html
+import random
 from datetime import datetime
 
 try:
@@ -19,10 +20,24 @@ BASE_URL = "https://kyle34343-lgtm.github.io/fleet-knowledge-base"
 
 # Live Stripe Checkout links
 STRIPE_TIER_1_URL = "https://buy.stripe.com/3cIeVc3MXavlb6GcxH6Zy03"
-STRIPE_TIER_2_URL = "https://buy.stripe.com/dRmdR897hdHx2Aa41b6Zy04"
-STRIPE_TIER_3_URL = "https://buy.stripe.com/4gM4gybfpdHx1w6apz6Zy05"
+STRIPE_TIER_2_URL = "https://buy.stripe.com/dRmdR897Hdhx2Aa41b6Zy04"
+STRIPE_TIER_3_URL = "https://buy.stripe.com/4gM4gybfpdHX1w6apZ6Zy05"
 
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL", "")
+
+# 100% Automated Niche Registry
+NICHES = [
+    {"name": "Docker & Cloud", "tag": "docker;kubernetes;amazon-web-services", "folder": "cloud-docker"},
+    {"name": "E-Commerce", "tag": "shopify;woocommerce;stripe-payments", "folder": "ecommerce"},
+    {"name": "Webhooks & APIs", "tag": "api;webhooks;rest;oauth-2.0", "folder": "webhooks"},
+    {"name": "WordPress Fatal", "tag": "wordpress;php;elementor", "folder": "wordpress"},
+    {"name": "Email & DNS", "tag": "dns;dmarc;dkim;spf", "folder": "email-deliverability"},
+    {"name": "Web Scraping", "tag": "playwright;selenium;web-scraping", "folder": "scraping"},
+    {"name": "Auth & SSL", "tag": "cors;ssl;jwt;authentication", "folder": "auth-security"},
+]
+
+ACTIVE_NICHE = random.choice(NICHES)
+print(f"[*] AUTO-PILOT TARGET: {ACTIVE_NICHE['name']}")
 
 def clean_slug(text):
     text = re.sub(r'[^a-zA-Z0-9\s-]', '', text).strip().lower()
@@ -33,9 +48,11 @@ def fetch_live_stackoverflow_lead():
     params = {
         "order": "desc",
         "sort": "activity",
+        "tagged": ACTIVE_NICHE["tag"],
         "site": "stackoverflow",
         "pagesize": 1
     }
+
     try:
         r = requests.get(url, params=params, timeout=10)
         data = r.json()
