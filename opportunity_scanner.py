@@ -232,12 +232,13 @@ def main():
         try:
             run_fleet_cycle(cycle)
             cycle += 1
-            time.sleep(300)
+            if "--single-run" not in sys.argv: time.sleep(300)
         except KeyboardInterrupt:
             print("\n[!] Fleet shutdown requested by operator.")
             sys.exit(0)
 
 if __name__ == "__main__":
     main()
+
 
 
