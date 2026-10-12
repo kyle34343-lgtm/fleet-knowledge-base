@@ -45,4 +45,8 @@
   <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791697131.html</loc><priority>0.8</priority></url>
   <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/need-webhook-zapier-fix.html</loc><priority>0.8</priority></url>
   <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/need-webhook-zapier-sync.html</loc><priority>0.8</priority></url>
+  <url>
+    <loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-ssl-sslv3-alert-handshake-failure-sslv3-alert-50837526</loc>
+    <lastmod>2026-10-12</lastmod>
+  </url>
 </urlset>
