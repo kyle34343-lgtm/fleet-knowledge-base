@@ -20,8 +20,8 @@ BASE_URL = "https://kyle34343-lgtm.github.io/fleet-knowledge-base"
 DISCORD_WEBHOOK_URL = ""
 
 # Stripe Checkout Links (replace with live Stripe products anytime)
-STRIPE_TIER_1_URL = "https://buy.stripe.com/test_19_quickfix"
-STRIPE_TIER_2_URL = "https://buy.stripe.com/test_49_fullpatch"
+STRIPE_TIER_1_URL = "https://buy.stripe.com/00w4gy0ALeLB8Yy8hr6Zy02"
+STRIPE_TIER_2_URL = "https://buy.stripe.com/7sYfZggzJ46X6Qq0OZ6Zy01"
 
 def clean_slug(text):
     text = re.sub(r'[^a-zA-Z0-9\s-]', '', text).strip().lower()
@@ -238,6 +238,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
