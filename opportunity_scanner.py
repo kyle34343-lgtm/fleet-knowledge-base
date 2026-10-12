@@ -150,7 +150,6 @@ def run_fleet_cycle(cycle_num):
     lead = fetch_live_stackoverflow_lead()
     source_label = "Live Stack Overflow" if lead["is_live"] else "Diagnostic Engine"
     print(f"    -> Intercepted Post via {source_label}: '{lead['title']}'")
-    time.sleep(1)
 
     # Bot 2: Triage
     intent_score = 94 if lead["is_live"] else 90
@@ -161,20 +160,16 @@ def run_fleet_cycle(cycle_num):
     if gsc_tags:
         print(f"[+] Bot 1 (Intelligence): Prioritizing top search impressions: {', '.join(gsc_tags[:5])}")
         tags = gsc_tags + tags
-    time.sleep(1)
 
     # Bot 3: Architect
     print("[+] Bot 3 (Architect): Synthesizing code patch & diagnostic tree...")
-    time.sleep(1)
 
     # Bot 4: Monetization Strategist
     print("[+] Bot 4 (Strategist): Configured $19 Quick-Fix & $49 Full Integration tiers.")
-    time.sleep(1)
 
     # Bot 5: Outreach & Pitch
     print("[+] Bot 5 (Outreach): Generating technical outbound pitch & lead alerts...")
     send_discord_lead_alert(lead, slug, intent_score)
-    time.sleep(1)
 
     # Bot 6: Publisher
     print(f"[+] Bot 6 (Publisher): Generating SEO article ({slug}.md)...")
@@ -224,6 +219,10 @@ Autonomous diagnostic report detailing root cause analysis and resolution workfl
 
     # Bot 7: Meta-Controller
     print("[+] Bot 7 (Meta-Controller): Cycle complete. Sleeping for 300 seconds (5 min)...")
+    if '--single-run' in sys.argv:
+        print('[+] Single run finished cleanly. Exiting runner.')
+        break
+    time.sleep(300)
 
 def main():
     print(">>> 7-Bot Autonomous Revenue Fleet Online <<<")
@@ -232,10 +231,7 @@ def main():
         try:
             run_fleet_cycle(cycle)
             cycle += 1
-                    if '--single-run' in sys.argv:
-            print('[+] Single run finished cleanly. Exiting runner.')
             break
-        time.sleep(300)
         except KeyboardInterrupt:
             print("\n[!] Fleet shutdown requested by operator.")
             sys.exit(0)
