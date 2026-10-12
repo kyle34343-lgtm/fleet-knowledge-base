@@ -1,4 +1,4 @@
-import os
+﻿import os
 import sys
 import time
 import subprocess
@@ -109,7 +109,7 @@ def send_discord_lead_alert(lead, slug, score):
     article_url = f"{BASE_URL}/{slug}.html"
     payload = {
         "embeds": [{
-            "title": f"🎯 High-Intent Developer Lead Identified ({score}/100)",
+            "title": f"ðŸŽ¯ High-Intent Developer Lead Identified ({score}/100)",
             "description": f"**Question:** {lead['title']}\n**Source Thread:** [View Forum Post]({lead['url']})\n**Deployed Knowledge Base Fix:** [View SEO Guide]({article_url})",
             "color": 3447003,
             "fields": [
@@ -197,11 +197,12 @@ Autonomous diagnostic report detailing root cause analysis and resolution workfl
 ---
 
 ### Need This Fixed Instantly?
-* **[Get the Automated $19 Quick-Fix Patch]({STRIPE_TIER_1_URL})** — Includes pre-built resolution scripts and clean configs.
-* **[Book Full $49 Diagnostic & Integration]({STRIPE_TIER_2_URL})** — Complete environment audit and hands-on integration.
+* **[Get the Automated $19 Quick-Fix Patch]({STRIPE_TIER_1_URL})** â€” Includes pre-built resolution scripts and clean configs.
+* **[Book Full $49 Diagnostic & Integration]({STRIPE_TIER_2_URL})** â€” Complete environment audit and hands-on integration.
 
 *(Source query tracked from developer community triage discussions.)*
 """
+    os.makedirs(os.path.dirname(article_path), exist_ok=True)
     with open(article_path, "w", encoding="utf-8") as f:
         f.write(content)
     
