@@ -221,7 +221,7 @@ Autonomous diagnostic report detailing root cause analysis and resolution workfl
     print("[+] Bot 7 (Meta-Controller): Cycle complete. Sleeping for 300 seconds (5 min)...")
     if '--single-run' in sys.argv:
         print('[+] Single run finished cleanly. Exiting runner.')
-        break
+        sys.exit(0)
     time.sleep(300)
 
 def main():
@@ -231,7 +231,7 @@ def main():
         try:
             run_fleet_cycle(cycle)
             cycle += 1
-            break
+            sys.exit(0)
         except KeyboardInterrupt:
             print("\n[!] Fleet shutdown requested by operator.")
             sys.exit(0)
