@@ -225,34 +225,4 @@ def main():
             sys.exit(0)
 
 if __name__ == "__main__":
-    main()---
-
-### Autonomous Fleet Patch Integration
-* **Instant Automation Patch ($19)**: Pre-configured Dockerfile, automated test wrapper, and dependency repair script: [Get Instant Patch](https://buy.stripe.com/test_19)
-* **Full Architecture Diagnostic ($49)**: Priority configuration review: [Request Full Service](https://buy.stripe.com/test_49)
-"""
-    with open(filename, "w", encoding="utf-8") as f:
-        f.write(content)
-    print(f"    -> Written: {os.path.abspath(filename)}")
-    print("[*] Bot 6: Auto-pushing updated knowledge base & sitemap...")
-    print("[OK] Bot 6: Synced live to GitHub Pages.")
-    print("[+] Bot 7 (Meta-Controller): Cycle complete.")
-
-def main():
-    if "--single-run" in sys.argv:
-        print(">>> 7-Bot Autonomous Revenue Fleet (Cloud Single Run) <<<")
-        run_fleet_cycle(1)
-        return
-    print(">>> 7-Bot Autonomous Revenue Fleet Online <<<")
-    cycle = 1
-    while True:
-        try:
-            run_fleet_cycle(cycle)
-            cycle += 1
-            time.sleep(300)
-        except KeyboardInterrupt:
-            print("\n[!] Fleet shutdown requested by operator.")
-            sys.exit(0)
-
-if __name__ == "__main__":
     main()
