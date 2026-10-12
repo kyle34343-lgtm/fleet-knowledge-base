@@ -1,0 +1,36 @@
+name: 24-7 Autonomous Revenue Fleet
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run-fleet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: pip install requests
+
+      - name: Run Fleet Cycle
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python opportunity_scanner.py --single-run
+
+      - name: Commit and Push New Articles
+        run: |
+          git config --global user.name "Fleet-Bot-Cloud"
+          git config --global user.email "bot@fleet.local"
+          git add inbound_articles/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Autonomous Cloud Fleet Publish" && git push)
