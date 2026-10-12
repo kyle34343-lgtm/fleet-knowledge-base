@@ -49,19 +49,16 @@ NICHES = [
     {"name": "Audio & Video Encoding", "tag": "ffmpeg;video-streaming;hls;transcoding", "folder": "media-encoding"},
 ]
 
-ACTIVE_NICHE = random.choice(NICHES)
-print(f"[*] AUTO-PILOT TARGET: {ACTIVE_NICHE['name']}")
-
 def clean_slug(text):
     text = re.sub(r'[^a-zA-Z0-9\s-]', '', text).strip().lower()
     return re.sub(r'[\s-]+', '-', text)[:45]
 
-def fetch_live_stackoverflow_lead():
+def fetch_live_stackoverflow_lead(niche):
     url = "https://api.stackexchange.com/2.3/questions/unanswered"
     params = {
         "order": "desc",
         "sort": "activity",
-        "tagged": ACTIVE_NICHE["tag"],
+        "tagged": niche["tag"],
         "site": "stackoverflow",
         "pagesize": 1
     }
@@ -81,26 +78,26 @@ def fetch_live_stackoverflow_lead():
         pass
     return {
         "id": int(time.time()),
-        "title": f"Runtime Resolution for {ACTIVE_NICHE['name']} Dependency Errors",
+        "title": f"Runtime Resolution for {niche['name']} Dependency Errors",
         "url": "https://stackoverflow.com",
         "tags": ["python", "ci-cd"],
         "is_live": False
     }
 
-def send_discord_lead_alert(lead, slug, score):
+def send_discord_lead_alert(lead, slug, score, niche):
     if not DISCORD_WEBHOOK_URL:
         return
     article_url = f"{BASE_URL}/{slug}.html"
     payload = {
         "embeds": [{
-            "title": f"⚡ [{ACTIVE_NICHE['name']}] Lead Identified ({score}/100)",
+            "title": f"⚡ [{niche['name']}] Lead Identified ({score}/100)",
             "description": f"**Question:** {lead['title']}\n**Source Thread:** [View Forum Post]({lead['url']})\n**Deployed Knowledge Base Fix:** [View Live Article]({article_url})",
             "color": 3447003,
             "fields": [
                 {"name": "Quick-Fix Tier ($19)", "value": f"[Instant Checkout Link]({STRIPE_TIER_1_URL})", "inline": True},
                 {"name": "Full Integration Tier ($49)", "value": f"[Book Support Link]({STRIPE_TIER_2_URL})", "inline": True},
                 {"name": "Enterprise Suite Tier ($149 AUD)", "value": f"[Enterprise Link]({STRIPE_TIER_3_URL})", "inline": True},
-                {"name": "Suggested Outbound Reply", "value": f"Hi, diagnosed this {ACTIVE_NICHE['name']} issue. Full breakdown and resolution steps available here: {article_url}"}
+                {"name": "Suggested Outbound Reply", "value": f"Hi, diagnosed this {niche['name']} issue. Full breakdown and resolution steps available here: {article_url}"}
             ],
             "footer": {"text": "Autonomous Revenue Fleet v3.0"}
         }]
@@ -111,9 +108,11 @@ def send_discord_lead_alert(lead, slug, score):
     except Exception as e:
         print(f"    [!] Webhook dispatch error: {e}")
 
-def run_fleet_cycle(cycle_num=1):
-    print(f"\n{'='*55}\n[*] FLEET CYCLE #{cycle_num} INITIATED - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n{'='*55}")
-    lead = fetch_live_stackoverflow_lead()
+def run_fleet_cycle(cycle_num, niche):
+    print(f"\n{'='*55}\n[*] FLEET CYCLE #{cycle_num} INITIATED - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"[*] TARGET NICHE: {niche['name']}\n{'='*55}")
+
+    lead = fetch_live_stackoverflow_lead(niche)
     slug = re.sub(r'[^\w\-]', "-", re.sub(r'\s+', "-", lead.get("title", "issue").lower())).strip("-")
 
     os.makedirs(KB_DIR, exist_ok=True)
@@ -126,7 +125,7 @@ title: "Error: {lead['title']}"
 
 # Error: {lead['title']}
 
-**Published:** {datetime.now().strftime('%Y-%m-%d')} | **Category:** {ACTIVE_NICHE['name']} Diagnostic
+**Published:** {datetime.now().strftime('%Y-%m-%d')} | **Category:** {niche['name']} Diagnostic
 
 ## Overview
 Autonomous diagnostic report detailing root cause analysis and resolution workflows for:
@@ -156,7 +155,12 @@ Autonomous diagnostic report detailing root cause analysis and resolution workfl
         f.write(article_content)
     print(f"    [OK] Article written: {md_path}")
 
-    send_discord_lead_alert(lead, slug, 94)
+    send_discord_lead_alert(lead, slug, 94, niche)
 
 if __name__ == "__main__":
-    run_fleet_cycle(1)
+    # Method 2: Process 3 distinct niches per scheduled trigger
+    selected_batch = random.sample(NICHES, 3)
+    for index, niche in enumerate(selected_batch, start=1):
+        run_fleet_cycle(index, niche)
+        if index < len(selected_batch):
+            time.sleep(4)
