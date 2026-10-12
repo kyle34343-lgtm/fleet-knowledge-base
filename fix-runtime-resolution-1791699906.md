@@ -1,4 +1,4 @@
-# Resolving Module Resolution & Dependency Failures in Autonomous Services
+﻿# Resolving Module Resolution & Dependency Failures in Autonomous Services
 
 **Published:** 2026-10-11
 

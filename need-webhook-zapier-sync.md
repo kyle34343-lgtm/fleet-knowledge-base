@@ -1,4 +1,4 @@
----
+﻿---
 title: "How to Resolve: Need webhook zapier sync"
 date: "2026-10-10"
 tags: ["automation", "python", "zapier"]

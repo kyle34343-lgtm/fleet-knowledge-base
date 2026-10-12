@@ -21,7 +21,7 @@ DISCORD_WEBHOOK_URL = ""
 
 # Stripe Checkout Links (replace with live Stripe products anytime)
 STRIPE_TIER_1_URL = "https://buy.stripe.com/00w4gy0ALeLB8Yy8hr6Zy02"
-STRIPE_TIER_2_URL = "https://buy.stripe.com/7sYfZggzJ46X6Qq0OZ6Zy01"
+STRIPE_TIER_2_URL = "https://buy.stripe.com/00w4gy0ALeLB8Yy8hr6Zy02"
 
 def clean_slug(text):
     text = re.sub(r'[^a-zA-Z0-9\s-]', '', text).strip().lower()
@@ -201,8 +201,8 @@ Autonomous diagnostic report detailing root cause analysis and resolution workfl
 ---
 
 ### Need This Fixed Instantly?
-* **[Get the Automated $19 Quick-Fix Patch]({STRIPE_TIER_1_URL})** â€” Includes pre-built resolution scripts and clean configs.
-* **[Book Full $49 Diagnostic & Integration]({STRIPE_TIER_2_URL})** â€” Complete environment audit and hands-on integration.
+* **[Get the Custom Solution Implementation ($149 AUD)]({STRIPE_TIER_1_URL})** â€” Includes pre-built resolution scripts and clean configs.
+* **[Technical Architecture Audit ($750 AUD)]({STRIPE_TIER_2_URL})** â€” Complete environment audit and hands-on integration.
 
 *(Source query tracked from developer community triage discussions.)*
 """
@@ -238,6 +238,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 

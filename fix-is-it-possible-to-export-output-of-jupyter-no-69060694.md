@@ -1,4 +1,4 @@
----
+﻿---
 layout: default
 title: "Fix: Is it possible to export output of Jupyter notebook to Excel?"
 date: 2026-10-12

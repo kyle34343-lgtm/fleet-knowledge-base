@@ -1,4 +1,4 @@
----
+﻿---
 layout: default
 title: "Fix: SSL: SSLV3_ALERT_HANDSHAKE_FAILURE sslv3 alert handshake failure (_ssl.c:833)"
 date: 2026-10-12
