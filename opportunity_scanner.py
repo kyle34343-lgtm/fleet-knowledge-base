@@ -6,6 +6,7 @@ import requests
 import re
 import html
 import random
+import glob
 from datetime import datetime
 
 try:
@@ -15,10 +16,8 @@ except ImportError:
 
 # --- CONFIGURATION ---
 KB_DIR = os.path.join(os.path.dirname(__file__), "inbound_articles")
-BATCH_PUSH = os.path.join(os.path.dirname(__file__), "push_kb.bat")
 BASE_URL = "https://kyle34343-lgtm.github.io/fleet-knowledge-base"
 
-# Live Stripe Checkout links
 STRIPE_TIER_1_URL = "https://buy.stripe.com/3cIeVc3MXavlb6GcxH6Zy03"
 STRIPE_TIER_2_URL = "https://buy.stripe.com/dRmdR897Hdhx2Aa41b6Zy04"
 STRIPE_TIER_3_URL = "https://buy.stripe.com/4gM4gybfpdHX1w6apZ6Zy05"
@@ -49,9 +48,34 @@ NICHES = [
     {"name": "Audio & Video Encoding", "tag": "ffmpeg;video-streaming;hls;transcoding", "folder": "media-encoding"},
 ]
 
-def clean_slug(text):
-    text = re.sub(r'[^a-zA-Z0-9\s-]', '', text).strip().lower()
-    return re.sub(r'[\s-]+', '-', text)[:45]
+def update_sitemap():
+    sitemap_path = os.path.join(os.path.dirname(__file__), "sitemap.xml")
+    articles = glob.glob(os.path.join(KB_DIR, "*.md"))
+    today = datetime.now().strftime("%Y-%m-%d")
+
+    xml_lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+        f'  <url><loc>{BASE_URL}/</loc><lastmod>{today}</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>',
+        f'  <url><loc>{BASE_URL}/vault.html</loc><lastmod>{today}</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>'
+    ]
+
+    for article in articles:
+        slug = os.path.splitext(os.path.basename(article))[0]
+        xml_lines.append(f'  <url><loc>{BASE_URL}/{slug}.html</loc><lastmod>{today}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>')
+
+    xml_lines.append('</urlset>')
+
+    with open(sitemap_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(xml_lines))
+    print(f"    [OK] Regenerated sitemap.xml with {len(articles)} indexed URLs.")
+
+    # Programmatic Search Engine Pings
+    try:
+        requests.get(f"https://www.bing.com/ping?sitemap={BASE_URL}/sitemap.xml", timeout=5)
+        print("    -> [OK] Dispatched sitemap ping to search engine indexers.")
+    except Exception:
+        pass
 
 def fetch_live_stackoverflow_lead(niche):
     url = "https://api.stackexchange.com/2.3/questions/unanswered"
@@ -97,9 +121,9 @@ def send_discord_lead_alert(lead, slug, score, niche):
                 {"name": "Quick-Fix Tier ($19)", "value": f"[Instant Checkout Link]({STRIPE_TIER_1_URL})", "inline": True},
                 {"name": "Full Integration Tier ($49)", "value": f"[Book Support Link]({STRIPE_TIER_2_URL})", "inline": True},
                 {"name": "Enterprise Suite Tier ($149 AUD)", "value": f"[Enterprise Link]({STRIPE_TIER_3_URL})", "inline": True},
-                {"name": "Suggested Outbound Reply", "value": f"Hi, diagnosed this {niche['name']} issue. Full breakdown and resolution steps available here: {article_url}"}
+                {"name": "Automated Outbound Response", "value": f"Hi, diagnosed this {niche['name']} issue. Full breakdown and resolution steps available here: {article_url}"}
             ],
-            "footer": {"text": "Autonomous Revenue Fleet v3.0"}
+            "footer": {"text": "Autonomous Revenue Fleet v3.1 | Auto-Sitemap Active"}
         }]
     }
     try:
@@ -158,9 +182,9 @@ Autonomous diagnostic report detailing root cause analysis and resolution workfl
     send_discord_lead_alert(lead, slug, 94, niche)
 
 if __name__ == "__main__":
-    # Method 2: Process 3 distinct niches per scheduled trigger
     selected_batch = random.sample(NICHES, 3)
     for index, niche in enumerate(selected_batch, start=1):
         run_fleet_cycle(index, niche)
         if index < len(selected_batch):
             time.sleep(4)
+    update_sitemap()
