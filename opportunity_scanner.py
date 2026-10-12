@@ -5,7 +5,7 @@ import requests
 from datetime import datetime
 
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL", "")
-STRIPE_TIER_1_URL = "https://buy.stripe.com/00w4gy0ALeLB8Yy8hr6Zy02"
+STRIPE_TIER_1_URL = "https://buy.stripe.com/eVq4gyabL5b1fmW55f6Zy00"
 STRIPE_TIER_2_URL = "https://buy.stripe.com/7sYfZggzJ46X6Qq0OZ6Zy01"
 
 def run_fleet_cycle(cycle_num):
@@ -31,7 +31,7 @@ def run_fleet_cycle(cycle_num):
 
     print(f"[+] Bot 2 (Triage): Intent Score: 94/100. Tags: {', '.join(tags)}")
     print("[+] Bot 3 (Architect): Synthesizing code patch & diagnostic tree...")
-    print("[+] Bot 4 (Strategist): Configured $19 Quick-Fix & $49 Full Integration tiers.")
+    print("[+] Bot 4 (Strategist): Configured $29 Quick-Fix & $149 Full Integration tiers.")
 
     clean_title = "".join(c if c.isalnum() else "-" for c in title.lower())
     clean_title = "-".join(filter(None, clean_title.split("-")))[:45]
@@ -68,8 +68,8 @@ Developers encounter this behavior primarily due to environment-level version dr
 ---
 
 ### Autonomous Fleet Patch Integration
-* **Instant Automation Patch ($19)**: [Get Instant Patch]({STRIPE_TIER_1_URL})
-* **Full Architecture Diagnostic ($49)**: [Request Full Service]({STRIPE_TIER_2_URL})
+* **Instant Automation Patch ($29 AUD)**: [Get Instant Patch]({STRIPE_TIER_1_URL})
+* **Full Architecture Diagnostic ($149 AUD)**: [Request Full Service]({STRIPE_TIER_2_URL})
 """
     with open(article_path, "w", encoding="utf-8") as f:
         f.write(content)
@@ -107,4 +107,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
