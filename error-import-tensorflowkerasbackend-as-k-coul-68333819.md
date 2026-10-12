@@ -23,8 +23,9 @@ Autonomous diagnostic report detailing root cause analysis and resolution workfl
 
 ---
 
-### Need This Fixed Instantly?
-* **[Get the Automated $19 Quick-Fix Patch](https://buy.stripe.com/test_19_quickfix)** — Includes pre-built resolution scripts and clean configs.
-* **[Book Full $49 Diagnostic & Integration](https://buy.stripe.com/test_49_fullpatch)** — Complete environment audit and hands-on integration.
-
-*(Source query tracked from developer community triage discussions.)*
+Need This Fixed Instantly?
+<ul>
+  <li><a href="https://buy.stripe.com/3cIeVc3MXavlb6GcxH6Zy03">⚡ Get the Automated $19 Quick-Fix Patch</a> — Includes pre-built resolution scripts and clean configs.</li>
+  <li><a href="https://buy.stripe.com/dRmdR897hdHx2Aa41b6Zy04">🛠️ Book Full $49 Diagnostic & Integration</a> — Complete environment audit and hands-on integration.</li>
+  <li><a href="https://buy.stripe.com/4gM4gybfpdHx1w6apz6Zy05">🏢 Enterprise Automation Suite ($149 AUD)</a> — Complete source repo, CI/CD fleet runner, and full architecture toolkit.</li>
+</ul>
