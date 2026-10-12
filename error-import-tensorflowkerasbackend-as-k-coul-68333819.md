@@ -1,4 +1,4 @@
-﻿---
+---
 layout: default
 title: "Error: import tensorflow.keras.backend as K could not be resolved Pylance(reportMissingImports)"
 ---
@@ -24,7 +24,7 @@ Autonomous diagnostic report detailing root cause analysis and resolution workfl
 ---
 
 ### Need This Fixed Instantly?
-* **[Get the Custom Solution Implementation ($149 AUD)](https://buy.stripe.com/test_19_quickfix)** — Includes pre-built resolution scripts and clean configs.
-* **[Technical Architecture Audit ($750 AUD)](https://buy.stripe.com/test_49_fullpatch)** — Complete environment audit and hands-on integration.
+* **[Get the Automated $19 Quick-Fix Patch](https://buy.stripe.com/test_19_quickfix)** — Includes pre-built resolution scripts and clean configs.
+* **[Book Full $49 Diagnostic & Integration](https://buy.stripe.com/test_49_fullpatch)** — Complete environment audit and hands-on integration.
 
 *(Source query tracked from developer community triage discussions.)*
