@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/</loc><priority>1.0</priority></url>
   <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/error-import-tensorflowkerasbackend-as-k-coul-68333819.html</loc><priority>0.8</priority></url>
+  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-ssl-sslv3-alert-handshake-failure-sslv3-alert-50837526.html</loc><priority>0.8</priority></url>
   <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791745700.html</loc><priority>0.8</priority></url>
   <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791708856.html</loc><priority>0.8</priority></url>
   <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791708548.html</loc><priority>0.8</priority></url>
@@ -45,8 +46,4 @@
   <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791697131.html</loc><priority>0.8</priority></url>
   <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/need-webhook-zapier-fix.html</loc><priority>0.8</priority></url>
   <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/need-webhook-zapier-sync.html</loc><priority>0.8</priority></url>
-  <url>
-    <loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-ssl-sslv3-alert-handshake-failure-sslv3-alert-50837526</loc>
-    <lastmod>2026-10-12</lastmod>
-  </url>
 </urlset>
