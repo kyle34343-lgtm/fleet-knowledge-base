@@ -212,7 +212,7 @@ Autonomous diagnostic report detailing root cause analysis and resolution workfl
 *(Source query tracked from developer community triage discussions.)*
 """
     os.makedirs(os.path.dirname(article_path), exist_ok=True)
-        article_dir = os.path.dirname(article_path)
+    article_dir = os.path.dirname(article_path)
     if article_dir:
         os.makedirs(article_dir, exist_ok=True)
     with open(article_path, "w", encoding="utf-8") as f:
