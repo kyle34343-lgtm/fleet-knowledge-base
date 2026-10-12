@@ -25,7 +25,7 @@ STRIPE_TIER_3_URL = "https://buy.stripe.com/4gM4gybfpdHX1w6apZ6Zy05"
 
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL", "")
 
-# 100% Automated Niche Registry
+# 100% Automated 20-Niche Registry
 NICHES = [
     {"name": "Docker & Cloud", "tag": "docker;kubernetes;amazon-web-services", "folder": "cloud-docker"},
     {"name": "E-Commerce", "tag": "shopify;woocommerce;stripe-payments", "folder": "ecommerce"},
@@ -34,6 +34,19 @@ NICHES = [
     {"name": "Email & DNS", "tag": "dns;dmarc;dkim;spf", "folder": "email-deliverability"},
     {"name": "Web Scraping", "tag": "playwright;selenium;web-scraping", "folder": "scraping"},
     {"name": "Auth & SSL", "tag": "cors;ssl;jwt;authentication", "folder": "auth-security"},
+    {"name": "Database Deadlocks", "tag": "postgresql;mysql;database-deadlocks;sql", "folder": "database"},
+    {"name": "AI & LLM Integrations", "tag": "openai-api;langchain;llm;rate-limiting", "folder": "ai-integrations"},
+    {"name": "CI/CD & Pipelines", "tag": "github-actions;gitlab-ci;jenkins;ci-cd", "folder": "ci-cd"},
+    {"name": "Next.js & SSR", "tag": "next.js;vercel;server-side-rendering;reactjs", "folder": "nextjs-vercel"},
+    {"name": "Mobile App Builds", "tag": "ios;xcode;fastlane;react-native;flutter", "folder": "app-submission"},
+    {"name": "Stripe & Subscriptions", "tag": "stripe-payments;payment-gateway;webhooks", "folder": "stripe-billing"},
+    {"name": "Technical SEO", "tag": "google-search-console;indexing;sitemap;redirects", "folder": "technical-seo"},
+    {"name": "DNS & Cloudflare", "tag": "cloudflare;dns;reverse-proxy;ssl-certificate", "folder": "dns-networking"},
+    {"name": "Linux & Nginx Sysadmin", "tag": "nginx;systemd;linux;memory-leaks;ubuntu", "folder": "linux-sysadmin"},
+    {"name": "Web3 & Blockchain RPC", "tag": "ethereum;web3;metamask;smart-contracts", "folder": "web3-troubleshooting"},
+    {"name": "Python Environment & Pip", "tag": "python;pip;wheel;setuptools;virtualenv", "folder": "python-troubleshoot"},
+    {"name": "Frontend Build & Bundlers", "tag": "vite;webpack;postcss;tailwind-css", "folder": "frontend-tooling"},
+    {"name": "Audio & Video Encoding", "tag": "ffmpeg;video-streaming;hls;transcoding", "folder": "media-encoding"},
 ]
 
 ACTIVE_NICHE = random.choice(NICHES)
@@ -52,7 +65,6 @@ def fetch_live_stackoverflow_lead():
         "site": "stackoverflow",
         "pagesize": 1
     }
-
     try:
         r = requests.get(url, params=params, timeout=10)
         data = r.json()
@@ -69,7 +81,7 @@ def fetch_live_stackoverflow_lead():
         pass
     return {
         "id": int(time.time()),
-        "title": "Runtime Resolution for Modular Dependency Errors",
+        "title": f"Runtime Resolution for {ACTIVE_NICHE['name']} Dependency Errors",
         "url": "https://stackoverflow.com",
         "tags": ["python", "ci-cd"],
         "is_live": False
@@ -81,14 +93,14 @@ def send_discord_lead_alert(lead, slug, score):
     article_url = f"{BASE_URL}/{slug}.html"
     payload = {
         "embeds": [{
-            "title": f"⚡ High-Intent Developer Lead Identified ({score}/100)",
-            "description": f"**Question:** {lead['title']}\n**Source Thread:** [View Forum Post]({lead['url']})\n**Deployed Knowledge Base Fix:** [View SEO Guide]({article_url})",
+            "title": f"⚡ [{ACTIVE_NICHE['name']}] Lead Identified ({score}/100)",
+            "description": f"**Question:** {lead['title']}\n**Source Thread:** [View Forum Post]({lead['url']})\n**Deployed Knowledge Base Fix:** [View Live Article]({article_url})",
             "color": 3447003,
             "fields": [
                 {"name": "Quick-Fix Tier ($19)", "value": f"[Instant Checkout Link]({STRIPE_TIER_1_URL})", "inline": True},
                 {"name": "Full Integration Tier ($49)", "value": f"[Book Support Link]({STRIPE_TIER_2_URL})", "inline": True},
                 {"name": "Enterprise Suite Tier ($149 AUD)", "value": f"[Enterprise Link]({STRIPE_TIER_3_URL})", "inline": True},
-                {"name": "Suggested Outbound Reply", "value": f"```Hi, diagnosed this runtime issue: check package registry manifests and clear lockfile cache. Here is the automated fix: {article_url}```", "inline": False}
+                {"name": "Suggested Outbound Reply", "value": f"Hi, diagnosed this {ACTIVE_NICHE['name']} issue. Full breakdown and resolution steps available here: {article_url}"}
             ],
             "footer": {"text": "Autonomous Revenue Fleet v3.0"}
         }]
@@ -102,11 +114,11 @@ def send_discord_lead_alert(lead, slug, score):
 def run_fleet_cycle(cycle_num=1):
     print(f"\n{'='*55}\n[*] FLEET CYCLE #{cycle_num} INITIATED - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n{'='*55}")
     lead = fetch_live_stackoverflow_lead()
-    slug = re.sub(r"[^\w\-]", "-", re.sub(r"\s+", "-", item.get("title", "issue").lower())).strip("-")
-    
+    slug = re.sub(r'[^\w\-]', "-", re.sub(r'\s+', "-", lead.get("title", "issue").lower())).strip("-")
+
     os.makedirs(KB_DIR, exist_ok=True)
     md_path = os.path.join(KB_DIR, f"{slug}.md")
-    
+
     article_content = f"""---
 layout: default
 title: "Error: {lead['title']}"
@@ -114,11 +126,11 @@ title: "Error: {lead['title']}"
 
 # Error: {lead['title']}
 
-**Published:** {datetime.now().strftime('%Y-%m-%d')} | **Category:** Technical Diagnostic
+**Published:** {datetime.now().strftime('%Y-%m-%d')} | **Category:** {ACTIVE_NICHE['name']} Diagnostic
 
 ## Overview
 Autonomous diagnostic report detailing root cause analysis and resolution workflows for:
-> *"{lead['title']}"*
+> "{lead['title']}"
 
 ## Root Cause Analysis
 * **Path / Manifest Mismatch:** Discrepancy between environment path exports and active package definitions.
@@ -132,19 +144,19 @@ Autonomous diagnostic report detailing root cause analysis and resolution workfl
 
 ---
 
-Need This Fixed Instantly?
+### Need This Fixed Instantly?
 <ul>
-  <li><a href="{STRIPE_TIER_1_URL}">⚡ Get the Automated $19 Quick-Fix Patch</a> — Includes pre-built resolution scripts and clean configs.</li>
-  <li><a href="{STRIPE_TIER_2_URL}">🛠️ Book Full $49 Diagnostic & Integration</a> — Complete environment audit and hands-on integration.</li>
-  <li><a href="{STRIPE_TIER_3_URL}">🏢 Enterprise Automation Suite ($149 AUD)</a> — Complete source repo, CI/CD fleet runner, and full architecture toolkit.</li>
+  <li><a href="{STRIPE_TIER_1_URL}">⚡ Get the Automated $19 Quick-Fix Patch</a> - Includes pre-built resolution scripts and clean configs.</li>
+  <li><a href="{STRIPE_TIER_2_URL}">🛠️ Book Full $49 Diagnostic & Integration</a> - Complete environment audit and hands-on integration.</li>
+  <li><a href="{STRIPE_TIER_3_URL}">📦 Enterprise Automation Suite ($149 AUD)</a> - Complete source repo, CI/CD fleet runner, and full architecture toolkit.</li>
 </ul>
 """
+
     with open(md_path, "w", encoding="utf-8") as f:
         f.write(article_content)
     print(f"    [OK] Article written: {md_path}")
-    
+
     send_discord_lead_alert(lead, slug, 94)
 
 if __name__ == "__main__":
     run_fleet_cycle(1)
-
