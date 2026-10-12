@@ -85,7 +85,7 @@ def send_discord_lead_alert(lead, slug, score):
 def run_fleet_cycle(cycle_num=1):
     print(f"\n{'='*55}\n[*] FLEET CYCLE #{cycle_num} INITIATED - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n{'='*55}")
     lead = fetch_live_stackoverflow_lead()
-    slug = f"{clean_slug(lead['title'])}-{lead['id']}"
+    slug = re.sub(r"[^\w\-]", "-", re.sub(r"\s+", "-", item.get("title", "issue").lower())).strip("-")
     
     os.makedirs(KB_DIR, exist_ok=True)
     md_path = os.path.join(KB_DIR, f"{slug}.md")
@@ -130,3 +130,4 @@ Need This Fixed Instantly?
 
 if __name__ == "__main__":
     run_fleet_cycle(1)
+
