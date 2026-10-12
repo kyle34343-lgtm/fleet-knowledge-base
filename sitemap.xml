@@ -1,50 +1,28 @@
+﻿---
+layout: null
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/</loc><priority>1.0</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/error-import-tensorflowkerasbackend-as-k-coul-68333819.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791698555.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/need-webhook-zapier-sync.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/need-webhook-zapier-fix.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-ssl-sslv3-alert-handshake-failure-sslv3-alert-50837526.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791745700.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791708856.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791708548.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791708240.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791707932.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791707624.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791707316.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791707007.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791706699.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791706391.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791706077.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791705769.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791705460.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791705152.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791704844.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791704536.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791704228.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791703920.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791703612.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791703303.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791702995.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791702687.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791702378.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791702066.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791701449.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791701758.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791701141.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791700832.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791700524.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791700216.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791699906.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791699597.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791699288.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791698980.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791698671.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791698364.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791698056.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791697748.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791697440.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-runtime-resolution-1791697131.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kyle34343-lgtm.github.io/fleet-knowledge-base/fix-is-it-possible-to-export-output-of-jupyter-no-69060694.html</loc><priority>0.8</priority></url>
+  <url>
+    <loc>{{ site.url }}{{ site.baseurl }}/</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  {% for post in site.posts %}
+  <url>
+    <loc>{{ site.url }}{{ site.baseurl }}{{ post.url }}</loc>
+    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  {% endfor %}
+  {% for page in site.pages %}
+  {% if page.url contains '.html' and page.url != '/404.html' and page.url != '/index.html' %}
+  <url>
+    <loc>{{ site.url }}{{ site.baseurl }}{{ page.url }}</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  {% endif %}
+  {% endfor %}
 </urlset>
