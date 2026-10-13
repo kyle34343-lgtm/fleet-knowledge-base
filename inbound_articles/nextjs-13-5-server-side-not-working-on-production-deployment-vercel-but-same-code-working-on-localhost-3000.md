@@ -5,7 +5,7 @@ title: "Error: Nextjs 13.5 server side not working on production deployment verc
 
 # Error: Nextjs 13.5 server side not working on production deployment vercel but same code working on localhost:3000
 
-**Published:** 2026-10-12 | **Category:** Next.js & SSR Diagnostic
+**Published:** 2026-10-13 | **Category:** Next.js & SSR Diagnostic
 
 ## Overview
 Autonomous diagnostic report detailing root cause analysis and resolution workflows for:
