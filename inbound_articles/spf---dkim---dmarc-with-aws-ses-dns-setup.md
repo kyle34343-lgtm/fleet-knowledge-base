@@ -5,7 +5,7 @@ title: "Error: SPF / DKIM / DMARC with AWS SES dns setup"
 
 # Error: SPF / DKIM / DMARC with AWS SES dns setup
 
-**Published:** 2026-10-12 | **Category:** Email & DNS Diagnostic
+**Published:** 2026-10-15 | **Category:** Email & DNS Diagnostic
 
 ## Overview
 Autonomous diagnostic report detailing root cause analysis and resolution workflows for:

@@ -5,7 +5,7 @@ title: "Error: Runtime Resolution for Mobile App Builds Dependency Errors"
 
 # Error: Runtime Resolution for Mobile App Builds Dependency Errors
 
-**Published:** 2026-10-12 | **Category:** Mobile App Builds Diagnostic
+**Published:** 2026-10-15 | **Category:** Mobile App Builds Diagnostic
 
 ## Overview
 Autonomous diagnostic report detailing root cause analysis and resolution workflows for:
