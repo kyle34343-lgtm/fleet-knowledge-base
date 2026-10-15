@@ -5,7 +5,7 @@ title: "Error: How do i change the resolution of a outgoing hls stream using ffm
 
 # Error: How do i change the resolution of a outgoing hls stream using ffmpeg?
 
-**Published:** 2026-10-13 | **Category:** Audio & Video Encoding Diagnostic
+**Published:** 2026-10-15 | **Category:** Audio & Video Encoding Diagnostic
 
 ## Overview
 Autonomous diagnostic report detailing root cause analysis and resolution workflows for:
