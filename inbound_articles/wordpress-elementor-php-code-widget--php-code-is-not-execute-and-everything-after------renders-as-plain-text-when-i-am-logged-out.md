@@ -5,7 +5,7 @@ title: "Error: Wordpress/Elementor/PHP Code Widget: PHP code is not execute and 
 
 # Error: Wordpress/Elementor/PHP Code Widget: PHP code is not execute and everything after "=>" renders as plain text when I am logged out
 
-**Published:** 2026-10-12 | **Category:** WordPress Fatal Diagnostic
+**Published:** 2026-10-15 | **Category:** WordPress Fatal Diagnostic
 
 ## Overview
 Autonomous diagnostic report detailing root cause analysis and resolution workflows for:
