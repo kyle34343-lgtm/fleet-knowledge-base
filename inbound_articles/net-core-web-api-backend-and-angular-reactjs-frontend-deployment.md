@@ -5,7 +5,7 @@ title: "Error: .NET Core Web API Backend and Angular/ReactJS Frontend deployment
 
 # Error: .NET Core Web API Backend and Angular/ReactJS Frontend deployment
 
-**Published:** 2026-10-16 | **Category:** Docker & Cloud Diagnostic
+**Published:** 2026-10-17 | **Category:** Docker & Cloud Diagnostic
 
 ## Overview
 Autonomous diagnostic report detailing root cause analysis and resolution workflows for:
